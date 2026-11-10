@@ -14,7 +14,7 @@
  * Usage:
  *   npx tsx src/scripts/prPrecheck.ts --diff /path/to/change.diff
  *   npx tsx src/scripts/prPrecheck.ts --stdin < change.diff
- *   npx tsx src/scripts/prPrecheck.ts --git /home/toxic/estate/ranch origin/main HEAD
+ *   npx tsx src/scripts/prPrecheck.ts --git /home/toxic/pens/estate/ranch origin/main HEAD
  *
  * Exit codes: 0 = clean (no governed targets touched, or touched-but-compliant),
  *             2 = one or more ADR violations (block the merge).
