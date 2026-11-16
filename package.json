@@ -12,7 +12,7 @@
     "dev:all": "concurrently -n \"BACKEND,CLIENT\" -c \"cyan,magenta\" \"tsx src/server.ts\" \"npm --prefix client run dev\"",
     "build:client": "npm --prefix client run build",
     "seed": "tsx src/db/seed.ts",
-    "seed:estate": "tsx src/scripts/seedEstate.ts",
+    "seed:Pens": "tsx src/scripts/seedEstate.ts",
     "verify": "tsx src/scripts/verifyBackbone.ts",
     "verify:phase2": "tsx src/scripts/verifyPhase2.ts",
     "test": "npm run verify:phase2"

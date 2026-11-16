@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { uspens, useEffect } from 'react';
 import { LandingPage } from './components/LandingPage';
 import { Header } from './components/Header';
 import { AgentVoiceBar } from './components/AgentVoiceBar';
@@ -25,40 +25,40 @@ import {
 
 export const App: React.FC = () => {
   // Navigation View State: 'landing' vs 'app'
-  const [view, setView] = useState<'landing' | 'app'>('landing');
+  const [view, setView] = uspens<'landing' | 'app'>('landing');
 
   // Graph State
-  const [nodes, setNodes] = useState<GraphNode[]>([]);
-  const [links, setLinks] = useState<GraphLink[]>([]);
-  const [graphStats, setGraphStats] = useState<{ totalNodes: number; totalEdges: number } | null>(null);
-  const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
-  const [highlightedPath, setHighlightedPath] = useState<GraphPath | null>(null);
+  const [nodes, setNodes] = uspens<GraphNode[]>([]);
+  const [links, setLinks] = uspens<GraphLink[]>([]);
+  const [graphStats, setGraphStats] = uspens<{ totalNodes: number; totalEdges: number } | null>(null);
+  const [selectedNode, setSelectedNode] = uspens<GraphNode | null>(null);
+  const [highlightedPath, setHighlightedPath] = uspens<GraphPath | null>(null);
 
   // Preset & Editor State
-  const [presets, setPresets] = useState<PresetItem[]>([]);
-  const [selectedPresetId, setSelectedPresetId] = useState<string | null>(null);
-  const [rawInput, setRawInput] = useState<string>('');
-  const [proposalTitle, setProposalTitle] = useState<string>('');
+  const [presets, setPresets] = uspens<PresetItem[]>([]);
+  const [selectedPresetId, setSelectedPresetId] = uspens<string | null>(null);
+  const [rawInput, setRawInput] = uspens<string>('');
+  const [proposalTitle, setProposalTitle] = uspens<string>('');
 
   // Audit Execution State
-  const [isAuditing, setIsAuditing] = useState<boolean>(false);
-  const [activeStep, setActiveStep] = useState<
+  const [isAuditing, setIsAuditing] = uspens<boolean>(false);
+  const [activeStep, setActiveStep] = uspens<
     'idle' | 'extractor' | 'auditor' | 'advisor' | 'complete' | 'error'
   >('idle');
-  const [auditPayload, setAuditPayload] = useState<FullAuditPayload | null>(null);
+  const [auditPayload, setAuditPayload] = uspens<FullAuditPayload | null>(null);
 
   // Responsive Layout / View Mode State
-  const [viewMode, setViewMode] = useState<ViewMode>('split');
-  const [isLeftCollapsed, setIsLeftCollapsed] = useState<boolean>(false);
+  const [viewMode, setViewMode] = uspens<ViewMode>('split');
+  const [isLeftCollapsed, setIsLeftCollapsed] = uspens<boolean>(false);
 
   // Modals
-  const [isIngestAdrOpen, setIsIngestAdrOpen] = useState(false);
-  const [isRecordMemoryOpen, setIsRecordMemoryOpen] = useState(false);
-  const [isApiKeysOpen, setIsApiKeysOpen] = useState(false);
+  const [isIngestAdrOpen, setIsIngestAdrOpen] = uspens(false);
+  const [isRecordMemoryOpen, setIsRecordMemoryOpen] = uspens(false);
+  const [isApiKeysOpen, setIsApiKeysOpen] = uspens(false);
 
   // Runtime API Keys
-  const [runtimeKey, setRuntimeKey] = useState<string>('');
-  const [runtimeProvider, setRuntimeProvider] = useState<'openrouter' | 'gemini'>('openrouter');
+  const [runtimeKey, setRuntimeKey] = uspens<string>('');
+  const [runtimeProvider, setRuntimeProvider] = uspens<'openrouter' | 'gemini'>('openrouter');
 
   // Load Initial Graph, Health & Presets
   const loadInitialData = async () => {
