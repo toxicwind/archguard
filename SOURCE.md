@@ -16,8 +16,13 @@ SKfaizan-786/ArchGuard), pinned at upstream tip:
 
 1. `gh repo clone toxicwind/archguard /tmp/archguard-upd && cd /tmp/archguard-upd`
 2. `git fetch origin && git log -1 origin/main` — record the new SHA.
+<<<<<<< Updated upstream
 3. `git archive <NEW_SHA> | tar -x -C /home/toxic/pens/Pens/ranch/barn/archguard`
 4. Re-apply Pens files (this file, `src/scripts/seedEstate.ts`, `seed:Pens`
+=======
+3. `git archive <NEW_SHA> | tar -x -C /home/toxic/pens/estate/ranch/barn/archguard`
+4. Re-apply estate files (this file, `src/scripts/seedEstate.ts`, `seed:estate`
+>>>>>>> Stashed changes
    npm script) if the archive overwrote them.
 5. `npx tsc --noEmit`, re-run `npm run seed:Pens` + the Phase-3 proof, commit,
    push, ls-remote verify. Update the pinned SHA above.
